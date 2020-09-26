@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <!-- Metadata Declaration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap Components -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+
+    <!-- jQuery Library -->
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Custom Stylesheets -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Page Components -->
+    <title>New York Times Search</title>
+    <!-- <link rel="icon" href="./assets/images/favicon.png"> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="jumbotron col-12" style="background-color: #20315A ; color: white;">
+                <h1 class="display-3 text-center"><i class="fa fa-newspaper-o"></i> New York Times Search</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="panel panel-primary">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <i class="fa  fa-list-alt"></i> Search Parameters
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="search">Search Term:</label>
+                                <input type="text" class="form-control" id="search-term" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="num-records">Number of records to retrieve:</label>
+                                <select class="form-control" id="num-records">
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="start-year">Start Year (Optional):</label>
+                                <input type="text" class="form-control" id="start-year" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="end-year">End Year (Optional):</label>
+                                <input type="text" class="form-control" id="end-year" placeholder="">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="run-search">Search</button>
+                            <button type="button" class="btn btn-default" id="clear-all">Clear All</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="row" id="search-box" style="display:none;">
+
+            <div class="col-12">
+
+                <div class="panel panel-primary">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Top Articles</h3>
+                    </div>
+
+                    <div class="panel-body" id="search-results">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Components -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
