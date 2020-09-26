@@ -18,6 +18,7 @@ var $button_clear = $('#clear-all');
 // Display
 var $display_searchbox = $('#search-box');
 var $display_results = $('#search-results');
+var $searching = $('#searching');
 
 // Functions
 function clearResults() {
@@ -26,6 +27,8 @@ function clearResults() {
     $display_results.empty();
     $display_searchbox.css("display", "none");
 
+    $searching.css("display", "none");
+
     $input_search.val("");
     $input_start.val("");
     $input_end.val("");
@@ -33,6 +36,8 @@ function clearResults() {
 
 function displayResults() {
     $display_searchbox.css("display", "block");
+
+    $searching.css("display", "none");
 }
 
 function validateSearch(theSearch, theNumber, theStart, theEnd) {
@@ -77,6 +82,8 @@ function searchResults(event) {
             queryURL += "&begin_date=" + startDate + "0101&end_date=" + endDate + "0101";
         }
 
+        $searching.css("display", "block");
+
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -87,9 +94,13 @@ function searchResults(event) {
 
             var results = response.response.docs;
 
+            if (results.length < numberSearches){
+                numberSearches = results.length;
+            }
+
             for (var i = 0; i < numberSearches; i++) {
 
-                if (results[i].headline.main) {
+                if (results[i].headline.main != undefined) {
                     var newH3 = $('<h3>');
                     var searchId = $('<span>');
                     searchId.addClass("label")
